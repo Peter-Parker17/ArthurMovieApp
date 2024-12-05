@@ -3,6 +3,7 @@ import './App.css';
 import Title from './components/Title';
 import Todo from './components/Todo';
 import footerlogo from '../src/images/movie-collage.webp'
+import Movies from './Pages/Movies';
 
 function App() {
   return (
@@ -10,8 +11,7 @@ function App() {
       <Title />
       <div>
       <img className="todo__wrapper" src={footerlogo} alt="" />
-      <Todo title="Finish Frontend Simplified"
-      paragraph="Code along with Frontend Simplified step by step" />
+      <Movies />
       </div>
     </>
   );
