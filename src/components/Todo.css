@@ -1,0 +1,9 @@
+.todo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: clac(100% / 3);
+    border: 1px solid black;
+    padding: 16px;
+}

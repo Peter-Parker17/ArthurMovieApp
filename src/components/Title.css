@@ -1,0 +1,21 @@
+.title {
+    background: linear-gradient(to right, black, blue);
+    background-clip: text;
+    color: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 1.5s ease;
+}
+
+.title:hover {
+    background: black;
+        color: #0ef;
+        transition: 0.5s ease;
+        box-shadow: 
+        0 0 10px #0ef,
+        0 0 20px #0ef,
+        0 0 40px #0ef,
+        0 0 80px #0ef,
+        0 0 160px #0ef;
+}

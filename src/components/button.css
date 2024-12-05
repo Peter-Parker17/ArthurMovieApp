@@ -1,0 +1,60 @@
+.button {
+    background-color: black;
+    position: relative;
+    display: inline-block;
+    color: #0ef;
+    text-decoration: none;
+    text-transform: uppercase;
+    border: 2px solid #0ef;
+    z-index: 1;
+    overflow: hidden;
+    transition: color 1s, box-shadow 1s;
+    margin: 24px;
+}
+
+button:hover {
+    cursor: pointer;
+    transition-delay: 0s, 1s;
+    color: black;
+    box-shadow: 
+    0 0 10px #0ef,
+    0 0 20px #0ef,
+    0 0 40px #0ef,
+    0 0 80px #0ef,
+    0 0 160px #0ef;
+}
+
+button:hover:before {
+    width: 100%;
+}
+
+button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 100;
+    width: 0;
+    height: 100%;
+    background: #0ef;
+    transform: skewX(35deg);
+    z-index: -1;
+    transition: 1s;
+}
+
+.search {
+    margin: 8px;
+    background-image: url(https://cdn2.hubspot.net/hubfs/4004166/bioticresearch_website_assets/images/search_icon.png);
+    background-repeat: no-repeat;
+    background-position: right;
+}
+
+.search:hover {
+    border: 2px solid #0ef;
+    transition: color 1s, box-shadow 1s;
+    box-shadow: 
+        0 0 10px #0ef,
+        0 0 20px #0ef,
+        0 0 40px #0ef,
+        0 0 80px #0ef,
+        0 0 160px #0ef;
+}
