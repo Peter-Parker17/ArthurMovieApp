@@ -2,6 +2,7 @@ import "./Todo.css";
 import "./button.css";
 import footerlogo from "../images/movie-collage.webp";
 import { useRef, useState } from "react";
+import { Link } from "react-router-dom";
 
 const Todo = () => {
   const [movies, setMovies] = useState([]);
@@ -20,8 +21,6 @@ const Todo = () => {
   return (
     <>
       <div className="todo">
-        <h2>Title</h2>
-        <h3>paragraph</h3>
         <input
           className="button search"
           type="text"
@@ -47,11 +46,12 @@ const Todo = () => {
         <div>
           {movies.map((item) => (
             <div>
+                <Link to={item.imdbID}>search</Link>
               <h2>{item.Title}</h2>
               <h2>{item.Year}</h2>
-              {/* <h1>{item.Poster}</h1> */}
+              <img src={item.Poster} alt="" />
             </div>
-          ))}
+            ))}
         </div>
       </div>
     </>
