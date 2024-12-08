@@ -3,7 +3,7 @@ import Todo from "../components/Todo"
 const Movies = () => {
     return (
         <div>
-            <Todo />
+            {/* <Todo /> */}
         </div>
     )
 }
