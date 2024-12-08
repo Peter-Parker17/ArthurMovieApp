@@ -45,8 +45,8 @@ const Todo = () => {
         </select>
         <div>
           {movies.map((item) => (
-            <div>
-                <Link to={item.imdbID}>search</Link>
+            <div key={item.imdbID}>
+                <Link to={`/${item.imdbID}`}>search</Link>
               <h2>{item.Title}</h2>
               <h2>{item.Year}</h2>
               <img src={item.Poster} alt="" />
