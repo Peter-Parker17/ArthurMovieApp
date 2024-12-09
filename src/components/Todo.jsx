@@ -8,8 +8,8 @@ import "./Skeleton.css"
 const Todo = () => {
     const [movies, setMovies] = useState([]);
     const [value, setValue] = useState();
-    const [isLoading, setIsLoading] = useState(false); // by default it will be falase
-
+    const [isLoading, setIsLoading] = useState(false); // by default it will be false
+    const [sortOrder, setSortOrder] = useState(''); // we would need to use this useState to track current filter
     const search = async (event) => {
         if (event) {
             event.preventDefault();
@@ -28,6 +28,22 @@ const Todo = () => {
             // search()
             setIsLoading(false)
         }, 3000)
+    };
+//this is the sort function where the filtering logic is
+const handleSort = (event) => {
+        const order = event.target.value;
+        setSortOrder(order);
+        
+        const sortedMovies = [...movies].sort((a, b) => {
+            if (order === 'newtoold') {
+                return parseInt(b.Year) - parseInt(a.Year);
+            } else if (order === 'oldtonew') {
+                return parseInt(a.Year) - parseInt(b.Year);
+            }
+            return 0;
+        });
+        
+        setMovies(sortedMovies);
     };
 
     return (
@@ -50,13 +66,16 @@ const Todo = () => {
                     type="password"
                     placeholder="password (optional)"
                 ></input>
-                <select name="filter" id="filter" onChange={() => "yearFilter"}>
-                    <option value="" disabled selected>
-                        select
-                    </option>
-                    <option value="newtoold">new to old</option>
-                    <option value="oldtonew">old to new</option>
-                </select>
+                 <select 
+            name="filter" 
+            id="filter" 
+            value={sortOrder}
+            onChange={handleSort} // added the sort function to here 
+        >
+            <option value="" disabled>select</option>
+            <option value="newtoold">new to old</option>
+            <option value="oldtonew">old to new</option>
+        </select>
                 <div>
                     {isLoading ? (
                         // when loading state is true we are going to display the skelton loading state
